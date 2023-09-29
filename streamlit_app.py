@@ -16,7 +16,7 @@ with st.sidebar:
     options=["overview","how aqi varies with time","highest and lowest aqi analysis","seasonal and remark analysis of aqi"],
     default_index=0)
 
-st.ballons()
+st.balloons()
 
 df=pd.read_csv("air-quality-india.csv")
 df.rename(columns = {'PM2.5':'aqi'}, inplace = True)
