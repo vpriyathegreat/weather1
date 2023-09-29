@@ -284,7 +284,7 @@ if selected=="highest and lowest aqi analysis":
     #plt.title("Air Quality Distribution by Seasons")
     plt.axis("equal")  # Equal aspect ratio ensures that pie is drawn as a circle.
     st.write(fig)
-     with st.expander("See explanation"):
+    with st.expander("See explanation"):
        st.markdown("""
 
 Theres a higher AIQ during winter and autumn months because of Weather Patterns: 
