@@ -160,11 +160,11 @@ if selected=="how aqi varies with time":
     ax.set_title("Line Plot")
     st.write(fig)
     with st.expander("See explanation"):
-    st.markdown("we can see that between the months june to october there is a significant drop in aqi compared to its peak values in january and december There are a few reasons why there is a significant drop in AQI between the months of June to October compared to its peak values in January and December in India.")
+      st.markdown("we can see that between the months june to october there is a significant drop in aqi compared to its peak values in january and december There are a few reasons why there is a significant drop in AQI between the months of June to October compared to its peak values in January and December in India.")
 
-    st.markdown("->Monsoon season: The monsoon season in India typically runs from June to September. The rain from the monsoon helps to wash away pollutants from the air, which improves air quality.") 
+      st.markdown("->Monsoon season: The monsoon season in India typically runs from June to September. The rain from the monsoon helps to wash away pollutants from the air, which improves air quality.") 
 
-    st.markdown("->Reduced stubble burning: Stubble burning is a common practice among farmers in northern India after harvesting their crops in October-November. The smoke from stubble burning contains high levels of particulate matter, which is a major air pollutant ->Lower temperatures: Temperatures are typically lower during the monsoon season than during the winter months. Lower temperatures can help to reduce the formation of ground-level ozone, which is a harmful air pollutant.")
+      st.markdown("->Reduced stubble burning: Stubble burning is a common practice among farmers in northern India after harvesting their crops in October-November. The smoke from stubble burning contains high levels of particulate matter, which is a major air pollutant ->Lower temperatures: Temperatures are typically lower during the monsoon season than during the winter months. Lower temperatures can help to reduce the formation of ground-level ozone, which is a harmful air pollutant.")
 
 
   #HR VS AQI
