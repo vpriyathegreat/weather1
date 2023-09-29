@@ -296,7 +296,6 @@ Theres a higher AIQ during winter and autumn months because of Weather Patterns:
 
 ->Geographical location: India is located in a region that is prone to dust storms. Dust storms can carry large amounts of pollutants into the air, which can worsen air quality.""")
        
-
   with tab2:
     st.title("Remark Analysis")
     st.divider()
@@ -305,15 +304,6 @@ Theres a higher AIQ during winter and autumn months because of Weather Patterns:
     fig,ax=plt.subplots(figsize=(10, 5))
     sns.barplot(x='Year',y='aqi',data=df,estimator=np.std,hue='remark')
     st.write(fig)
-    with st.expander("See explanation"):
-      st.markdown("""**we can see that aqi isnt very poor or severe during any of the years. The aqi is poorest in the year 2018 with the maxium no of poor recoded cases**
-this was particularly due to:
-
-1.Construction activities: Construction activities can also contribute to air pollution, especially in urban areas. In 2018, there was a significant increase in construction activities in India, which may have contributed to the worsening air quality.
-2.Economic growth: India experienced rapid economic growth in 2018, which led to an increase in industrial emissions and vehicle traffic. Both of these factors can contribute to air pollution.
-
-In addition to these factors, the rapid growth of urbanization and industrialization in India is also contributing to worsening air quality.""")
-
     st.divider()
     st.header("Air Distribution By Ratings")
     poor_count=df[df['remark']=='poor']['Year'].count()
@@ -330,6 +320,4 @@ In addition to these factors, the rapid growth of urbanization and industrializa
     plt.title("Air Quality Distribution by ratings",fontsize=6)
     plt.axis("equal")  # Equal aspect ratio ensures that pie is drawn as a circle.
     st.write(fig)
-  
-
 
