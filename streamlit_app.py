@@ -147,7 +147,7 @@ if selected=="how aqi varies with time":
 
       st.markdown("Lower Industrial Emissions: Some industries may reduce their operations or emissions during the summer months due to reduced energy demand for heating and cooling.")
       st.write("Less Biomass Burning: Apart from crop residue burning, the burning of wood and other biomass for heating is more common during the winter months. This contributes to particulate matter and air pollution") 
-fig, ax = plt.subplots()
+
     #LINEPLOT
     st.divider()
     st.subheader("Month vs AQI Lineplot")
