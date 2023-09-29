@@ -330,13 +330,6 @@ In addition to these factors, the rapid growth of urbanization and industrializa
     plt.title("Air Quality Distribution by ratings",fontsize=6)
     plt.axis("equal")  # Equal aspect ratio ensures that pie is drawn as a circle.
     st.write(fig)
-    with st.expander("See explanation"):
-      st.markdown("""The overall AQI in India is mostly good, with 56.1% of the days having a good AQI rating. However, it is concerning that 40.24% of the days have a moderate AQI rating and 3.73% of the days have a satisfactory AQI rating. This means that on more than half of the days in India, the air quality is not good.
-
-The fact that the AQI is poor on only 0.02% of the days is a positive sign, but it is important to note that even a short exposure to poor air quality can have negative health effects.
-
-The Indian government is taking a number of steps to improve air quality, but more needs to be done to address the root causes of air pollution, such as stubble burning, vehicle emissions, construction dust, and industrial emissions.""")
-
-
+  
 
 
