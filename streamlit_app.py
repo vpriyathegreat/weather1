@@ -140,13 +140,13 @@ if selected=="how aqi varies with time":
     a=sns.barplot(x='Month',y='aqi',data=df,estimator=np.std)
     st.write(fig)
     with st.expander("See explanation"):
-      st.write("air quality in India is  better between june to september months than in other months. This is because of several reasons:")
-      st.markdown("the monsoon season typically runs from June to September, and the rain helps to wash away pollutants from the air.")
+      st.write("->air quality in India is  better between june to september months than in other months. This is because of several reasons:")
+      st.markdown("->the monsoon season typically runs from June to September, and the rain helps to wash away pollutants from the air.")
 
-      st.write("Increased Ventilation: During the summer, there is often more wind and natural ventilation, which can help disperse air pollutants and improve air quality")
+      st.write("->Increased Ventilation: During the summer, there is often more wind and natural ventilation, which can help disperse air pollutants and improve air quality")
 
-      st.markdown("Lower Industrial Emissions: Some industries may reduce their operations or emissions during the summer months due to reduced energy demand for heating and cooling.")
-      st.write("Less Biomass Burning: Apart from crop residue burning, the burning of wood and other biomass for heating is more common during the winter months. This contributes to particulate matter and air pollution") 
+      st.markdown("->Lower Industrial Emissions: Some industries may reduce their operations or emissions during the summer months due to reduced energy demand for heating and cooling.")
+      st.write("->Less Biomass Burning: Apart from crop residue burning, the burning of wood and other biomass for heating is more common during the winter months. This contributes to particulate matter and air pollution") 
 
     #LINEPLOT
     st.divider()
@@ -160,8 +160,15 @@ if selected=="how aqi varies with time":
     ax.set_title("Line Plot")
     st.write(fig)
     with st.expander("See explanation"):
-      st.write(" The chart above shows some numbers I picked for you. I rolled actual dice for these, so they're *guaranteed* to be random.")
-    
+    st.markdown("""
+
+we can see that between the months june to october there is a significant drop in aqi compared to its peak values in january and december There are a few reasons why there is a significant drop in AQI between the months of June to October compared to its peak values in January and December in India.
+
+->Monsoon season: The monsoon season in India typically runs from June to September. The rain from the monsoon helps to wash away pollutants from the air, which improves air quality. 
+
+->Reduced stubble burning: Stubble burning is a common practice among farmers in northern India after harvesting their crops in October-November. The smoke from stubble burning contains high levels of particulate matter, which is a major air pollutant ->Lower temperatures: Temperatures are typically lower during the monsoon season than during the winter months. Lower temperatures can help to reduce the formation of ground-level ozone, which is a harmful air pollutant.""")
+
+
   #HR VS AQI
   if aqi_option=="Hour vs aqi":
     st.subheader("Hour vs AQI Barplot")
@@ -169,8 +176,13 @@ if selected=="how aqi varies with time":
     a=sns.barplot(x='Hour',y='aqi',data=df,estimator=np.std)
     st.write(fig)
     with st.expander("See explanation"):
-      st.write(" The chart above shows some numbers I picked for you. I rolled actual dice for these, so they're *guaranteed* to be random.")
-    st.divider()
+     st.markdown("""the AQI is worse during the time 4-8 and 14-21, as there are many factors that can affect air qualit:
+*increased traffic during these times: 4-8 and 14-21 are typically peak commuting times, so there is more traffic on the roads during these times. This can lead to increased emissions from vehicles, which can worsen air quality.
+*Meteorological conditions: Meteorological conditions, such as low wind speeds and temperature inversions, can trap pollutants in the air and make them more concentrated. These conditions are more likely to occur in the early morning and evening hours""")
+      
+      
+
+  st.divider()
     st.subheader("Hour vs AQI Lineplot")
     grped_hr=df.groupby("Hour").mean(numeric_only=True)
     grped_hr_index=grped_hr.index
@@ -182,8 +194,20 @@ if selected=="how aqi varies with time":
     plt.xticks(grped_hr_index)
     st.write(fig)
     with st.expander("See explanation"):
-      st.write(" The chart above shows some numbers I picked for you. I rolled actual dice for these, so they're *guaranteed* to be random.")
-    
+     st.markdown("""HOURLY ANALYSIS
+
+we can see that the aqi is generally very high between 5pm-7pm and also during 5am in the morning.The aqi gradually dips down after 7pm there r few reasons for this: 
+  
+->Increased traffic: 5pm-7pm is typically a peak commuting time in India, so there is more traffic on the roads during this time 
+            
+->Meteorological conditions:these conditions are more likely to occur in the evening hours and early morning, which could explain why the AQI is often highest between 5pm-7pm and 5am. ->Industrial emissions: Some industries may operate 24 hours a day, but they may emit more pollutants during certain times of the day, such as during the evening hours and early morning hours.
+            
+
+Its particularly dips down after 7 pm because: 
+->Increased wind speeds: Wind speeds are typically higher at night than during the day. This can help to disperse pollutants in the air, which can improve air quality. 
+
+->Decreased temperatures: Temperatures are typically lower at night than during the day. This can help to reduce the formation of ground-level ozone, which is a harmful air pollutant.""")
+
 #checking for null values
 
 ########HIGHEST AND LOWEST AQI TAB ####################
@@ -235,6 +259,19 @@ if selected=="highest and lowest aqi analysis":
       table = pd.pivot_table(a, values = 'aqi', index ='Year',
                          columns ='Month')
       st.write(table)
+       with st.expander("See explanation"):
+      st.markdown("""we notice that in the month of november theres a high aqi consistently because of festivals like diwali
+Diwali is a Hindu festival that is celebrated with fireworks and bonfires. The burning of fireworks and bonfires releases large amounts of pollutants into the air.
+
+The poor air quality in India in November 2017 had a significant impact on public health. Schools were closed in Delhi and other cities due to the poor air quality. Many people also reported experiencing respiratory problems.
+
+Increasing the use of public transportation Promoting the use of electric vehicles Banning the burning of biomass Implementing stricter emission standards for vehicles and industries
+
+
+The Indian government has taken a number of steps to address air pollution, including implementing stricter emission standards for vehicles and industries, and banning the burning of biomass. However, more needs to be done to improve air quality in India
+es, there was a major restriction imposed after November 2017 to control air pollution in India. In January 2018, the Supreme Court of India banned the use of diesel vehicles older than 10 years in Delhi and the National Capital Region (NCR). The court also ordered the government to implement a number of other measures to reduce air pollution, including:
+
+""")
 if selected=="seasonal and remark analysis of aqi":
   tab1, tab2= st.tabs(["Seasonal Analysis", "Remark analysis"])
   with tab1:
@@ -256,6 +293,19 @@ if selected=="seasonal and remark analysis of aqi":
     #plt.title("Air Quality Distribution by Seasons")
     plt.axis("equal")  # Equal aspect ratio ensures that pie is drawn as a circle.
     st.write(fig)
+     with st.expander("See explanation"):
+       st.markdown("""
+
+Theres a higher AIQ during winter and autumn months because of Weather Patterns: 
+->During winter and autumn, certain regions in India experience weather conditions that can contribute to poor air quality. For example, winter often brings temperature inversions, where cold air near the ground traps pollutants, leading to increased pollution levels. 
+
+->Reduced Dispersion: During winter, the lower temperatures and reduced wind speeds can limit the dispersion of pollutants, causing them to accumulate in the atmosphere and leading to higher AQI levels
+
+->Increased use of fossil fuels for heating: During the winter months, people in India use fossil fuels such as coal and wood for heating their homes. This can lead to an increase in the emission of pollutants into the air.
+
+->Geographical location: India is located in a region that is prone to dust storms. Dust storms can carry large amounts of pollutants into the air, which can worsen air quality.""")
+       
+
   with tab2:
     st.title("Remark Analysis")
     st.divider()
@@ -264,6 +314,15 @@ if selected=="seasonal and remark analysis of aqi":
     fig,ax=plt.subplots(figsize=(10, 5))
     sns.barplot(x='Year',y='aqi',data=df,estimator=np.std,hue='remark')
     st.write(fig)
+    with st.expander("See explanation"):
+    st.markdown("""**we can see that aqi isnt very poor or severe during any of the years. The aqi is poorest in the year 2018 with the maxium no of poor recoded cases**
+this was particularly due to:
+
+1.Construction activities: Construction activities can also contribute to air pollution, especially in urban areas. In 2018, there was a significant increase in construction activities in India, which may have contributed to the worsening air quality.
+2.Economic growth: India experienced rapid economic growth in 2018, which led to an increase in industrial emissions and vehicle traffic. Both of these factors can contribute to air pollution.
+
+In addition to these factors, the rapid growth of urbanization and industrialization in India is also contributing to worsening air quality.""")
+
     st.divider()
     st.header("Air Distribution By Ratings")
     poor_count=df[df['remark']=='poor']['Year'].count()
@@ -280,3 +339,10 @@ if selected=="seasonal and remark analysis of aqi":
     plt.title("Air Quality Distribution by ratings",fontsize=6)
     plt.axis("equal")  # Equal aspect ratio ensures that pie is drawn as a circle.
     st.write(fig)
+     with st.expander("See explanation"):
+     st.markdown("""The overall AQI in India is mostly good, with 56.1% of the days having a good AQI rating. However, it is concerning that 40.24% of the days have a moderate AQI rating and 3.73% of the days have a satisfactory AQI rating. This means that on more than half of the days in India, the air quality is not good.
+
+The fact that the AQI is poor on only 0.02% of the days is a positive sign, but it is important to note that even a short exposure to poor air quality can have negative health effects.
+
+The Indian government is taking a number of steps to improve air quality, but more needs to be done to address the root causes of air pollution, such as stubble burning, vehicle emissions, construction dust, and industrial emissions.""")
+
