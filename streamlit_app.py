@@ -7,6 +7,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import datetime as dt
 
+st.markdown("OVERVIEW")
+st.sidebar.markdown("VARIATION OF AQI WITH TIME")
 
 #fig, ax = plt.subplots()
 
