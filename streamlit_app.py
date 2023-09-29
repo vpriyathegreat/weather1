@@ -140,15 +140,14 @@ if selected=="how aqi varies with time":
     a=sns.barplot(x='Month',y='aqi',data=df,estimator=np.std)
     st.write(fig)
     with st.expander("See explanation"):
-      st.write("""air quality in India is  better between june to september months than in other months. This is because of several reasons:")
+      st.write("air quality in India is  better between june to september months than in other months. This is because of several reasons:")
    st.markdown("<ul> <li style='font-size: 20px'>the monsoon season typically runs from June to September, and the rain helps to wash away pollutants from the air.</li>
 
 <li style='font-size: 20px'>Increased Ventilation: During the summer, there is often more wind and natural ventilation, which can help disperse air pollutants and improve air quality</li>
 
 <li style='font-size: 20px'>Lower Industrial Emissions: Some industries may reduce their operations or emissions during the summer months due to reduced energy demand for heating and cooling.</li>
 
-<li style='font-size: 20px'>Less Biomass Burning: Apart from crop residue burning, the burning of wood and other biomass for heating is more common during the winter months. This contributes to particulate matter and air pollution</li></ul>",unsafe_allow_html=True)
-    st.write("")
+<li style='font-size: 20px'>Less Biomass Burning: Apart from crop residue burning, the burning of wood and other biomass for heating is more common during the winter months. This contributes to particulate matter and air pollution</li></ul>",unsafe_allow_html=True") st.write("")
 fig, ax = plt.subplots()
     #LINEPLOT
     st.divider()
