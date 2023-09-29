@@ -264,7 +264,7 @@ if selected=="highest and lowest aqi analysis":
        st.markdown("Increasing the use of public transportation, promoting the use of electric vehicles, banning the burning of biomass, and implementing stricter emission standards for vehicles and industries are some of the measures to address air pollution.")
        st.markdown("The Indian government has taken a number of steps to address air pollution, including implementing stricter emission standards for vehicles and industries and banning the burning of biomass. However, more needs to be done to improve air quality in India. In January 2018, the Supreme Court of India banned the use of diesel vehicles older than 10 years in Delhi and the National Capital Region (NCR). The court also ordered the government to implement a number of other measures to reduce air pollution.")
     if selected=="seasonal and remark analysis of aqi":
-  tab1, tab2= st.tabs(["Seasonal Analysis", "Remark analysis"])
+      tab1, tab2= st.tabs(["Seasonal Analysis", "Remark analysis"])
   with tab1:
     st.title("Seasonal Analysis")
     st.divider()
