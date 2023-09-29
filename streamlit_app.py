@@ -284,18 +284,7 @@ if selected=="highest and lowest aqi analysis":
     #plt.title("Air Quality Distribution by Seasons")
     plt.axis("equal")  # Equal aspect ratio ensures that pie is drawn as a circle.
     st.write(fig)
-    with st.expander("See explanation"):
-       st.markdown("""
-
-Theres a higher AIQ during winter and autumn months because of Weather Patterns: 
-->During winter and autumn, certain regions in India experience weather conditions that can contribute to poor air quality. For example, winter often brings temperature inversions, where cold air near the ground traps pollutants, leading to increased pollution levels. 
-
-->Reduced Dispersion: During winter, the lower temperatures and reduced wind speeds can limit the dispersion of pollutants, causing them to accumulate in the atmosphere and leading to higher AQI levels
-
-->Increased use of fossil fuels for heating: During the winter months, people in India use fossil fuels such as coal and wood for heating their homes. This can lead to an increase in the emission of pollutants into the air.
-
-->Geographical location: India is located in a region that is prone to dust storms. Dust storms can carry large amounts of pollutants into the air, which can worsen air quality.""")
-       
+  
   with tab2:
     st.title("Remark Analysis")
     st.divider()
