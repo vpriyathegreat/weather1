@@ -141,7 +141,7 @@ if selected=="how aqi varies with time":
     st.write(fig)
     with st.expander("See explanation"):
       st.write("air quality in India is  better between june to september months than in other months. This is because of several reasons:")
-   st.markdown("<ul> <li style='font-size: 20px'>the monsoon season typically runs from June to September, and the rain helps to wash away pollutants from the air.</li>
+      st.markdown("<ul> <li style='font-size: 20px'>the monsoon season typically runs from June to September, and the rain helps to wash away pollutants from the air.</li>
 
 <li style='font-size: 20px'>Increased Ventilation: During the summer, there is often more wind and natural ventilation, which can help disperse air pollutants and improve air quality</li>
 
