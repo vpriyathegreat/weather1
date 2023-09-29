@@ -257,19 +257,16 @@ if selected=="highest and lowest aqi analysis":
       table = pd.pivot_table(a, values = 'aqi', index ='Year',
                          columns ='Month')
       st.write(table)
-       with st.expander("See explanation"):
-      st.markdown("""we notice that in the month of november theres a high aqi consistently because of festivals like diwali
-Diwali is a Hindu festival that is celebrated with fireworks and bonfires. The burning of fireworks and bonfires releases large amounts of pollutants into the air.
+      with st.expander("See explanation"):
+        st.markdown("we notice that in the month of november theres a high aqi consistently because of festivals like diwali
+    st.markdown("Diwali is a Hindu festival that is celebrated with fireworks and bonfires. The burning of fireworks and bonfires releases large amounts of pollutants into the air.")
 
-The poor air quality in India in November 2017 had a significant impact on public health. Schools were closed in Delhi and other cities due to the poor air quality. Many people also reported experiencing respiratory problems.
+    st.markdown("The poor air quality in India in November 2017 had a significant impact on public health. Schools were closed in Delhi and other cities due to the poor air quality. Many people also reported experiencing respiratory problems.")
 
-Increasing the use of public transportation Promoting the use of electric vehicles Banning the burning of biomass Implementing stricter emission standards for vehicles and industries
+    st.markdown("Increasing the use of public transportation Promoting the use of electric vehicles Banning the burning of biomass Implementing stricter emission standards for vehicles and industries")
 
 
-The Indian government has taken a number of steps to address air pollution, including implementing stricter emission standards for vehicles and industries, and banning the burning of biomass. However, more needs to be done to improve air quality in India
-es, there was a major restriction imposed after November 2017 to control air pollution in India. In January 2018, the Supreme Court of India banned the use of diesel vehicles older than 10 years in Delhi and the National Capital Region (NCR). The court also ordered the government to implement a number of other measures to reduce air pollution, including:
-
-""")
+    st.markdown("The Indian government has taken a number of steps to address air pollution, including implementing stricter emission standards for vehicles and industries, and banning the burning of biomass. However, more needs to be done to improve air quality in Indiaes, there was a major restriction imposed after November 2017 to control air pollution in India. In January 2018, the Supreme Court of India banned the use of diesel vehicles older than 10 years in Delhi and the National Capital Region (NCR). The court also ordered the government to implement a number of other measures to reduce air pollution")
 if selected=="seasonal and remark analysis of aqi":
   tab1, tab2= st.tabs(["Seasonal Analysis", "Remark analysis"])
   with tab1:
