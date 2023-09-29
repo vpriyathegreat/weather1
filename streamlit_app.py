@@ -306,7 +306,7 @@ Theres a higher AIQ during winter and autumn months because of Weather Patterns:
     sns.barplot(x='Year',y='aqi',data=df,estimator=np.std,hue='remark')
     st.write(fig)
     with st.expander("See explanation"):
-    st.markdown("""**we can see that aqi isnt very poor or severe during any of the years. The aqi is poorest in the year 2018 with the maxium no of poor recoded cases**
+      st.markdown("""**we can see that aqi isnt very poor or severe during any of the years. The aqi is poorest in the year 2018 with the maxium no of poor recoded cases**
 this was particularly due to:
 
 1.Construction activities: Construction activities can also contribute to air pollution, especially in urban areas. In 2018, there was a significant increase in construction activities in India, which may have contributed to the worsening air quality.
