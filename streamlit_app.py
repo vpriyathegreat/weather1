@@ -180,7 +180,7 @@ if selected=="how aqi varies with time":
       
       
 
-  st.divider()
+    st.divider()
     st.subheader("Hour vs AQI Lineplot")
     grped_hr=df.groupby("Hour").mean(numeric_only=True)
     grped_hr_index=grped_hr.index
