@@ -365,7 +365,7 @@ The Indian government is taking a number of steps to improve air quality, but mo
 
 
 # Check if the "airforecast" option is selected
-if selected == "airforecast":
+if selected == "airforcast":
     # Replace with your OpenWeather API key
     openweather_api_key = "d90fab7004bbe953db2d107c55bb1d81"
 
