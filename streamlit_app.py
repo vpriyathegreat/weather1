@@ -15,7 +15,7 @@ import requests
 with st.sidebar:
   selected=option_menu(
     menu_title=None,
-    options=["overview","how aqi varies with time","highest and lowest aqi analysis","seasonal and remark analysis of aqi","airforecast","air quality index"],
+    options=["overview","how aqi varies with time","highest and lowest aqi analysis","seasonal and remark analysis of aqi","airforecast","AIR"],
     default_index=0)
 
 
@@ -428,7 +428,7 @@ if selected == "airforecast":
             st.error("Error fetching data from the Geocoding API.")
 
 
-if selected == "air quality index":
+if selected == "AIR":
     api_key = "d90fab7004bbe953db2d107c55bb1d81"
 
     # Enter the city name
