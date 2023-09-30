@@ -428,16 +428,19 @@ if selected == "airforecast":
             st.error("Error fetching data from the Geocoding API.")
 
 
-if selected == "AIR":
-    import requests
-    from datetime import datetime as dt
+i
 
-    # Replace with your OpenWeather API key
-    api_key = "d90fab7004bbe953db2d107c55bb1d81"
+# Replace with your OpenWeather API key
+api_key = "d90fab7004bbe953db2d107c55bb1d81"
 
-    # Enter the city name
-    city_name = "Delhi"
+# Streamlit app title
+st.title("Air Quality Index")
 
+# Input for city name
+city_name = st.text_input("Enter the city name:", "Delhi")
+
+# Button to fetch air quality data
+if st.button("Fetch Air Quality Data"):
     # Function to get current air pollution data
     def get_current_air_pollution(city_name, api_key):
         # Step 1: Geocoding API to get latitude and longitude
@@ -481,31 +484,30 @@ if selected == "AIR":
                         # Convert Unix timestamp to date (IST)
                         date = dt.utcfromtimestamp(timestamp).strftime('%Y-%m-%d')
 
-                        # Print current air pollution data
-                        print("Current Air Pollution Data:")
-                        print(f"City: {city_name}")
-                        print(f"Latitude: {latitude}")
-                        print(f"Longitude: {longitude}")
-                        print(f"Air Quality Index (AQI): {aqi}")
-                        print(f"Date (IST): {date}")
-                        print("Components:")
-                        print(f"CO: {components['co']} µg/m³")
-                        print(f"NO: {components['no']} µg/m³")
-                        print(f"NO2: {components['no2']} µg/m³")
-                        print(f"O3: {components['o3']} µg/m³")
-                        print(f"SO2: {components['so2']} µg/m³")
-                        print(f"PM2.5: {components['pm2_5']} µg/m³")
-                        print(f"PM10: {components['pm10']} µg/m³")
-                        print(f"NH3: {components['nh3']} µg/m³")
+                        # Display current air pollution data
+                        st.subheader("Current Air Pollution Data:")
+                        st.write(f"City: {city_name}")
+                        st.write(f"Latitude: {latitude}")
+                        st.write(f"Longitude: {longitude}")
+                        st.write(f"Air Quality Index (AQI): {aqi}")
+                        st.write(f"Date (IST): {date}")
+                        st.subheader("Components:")
+                        st.write(f"CO: {components['co']} µg/m³")
+                        st.write(f"NO: {components['no']} µg/m³")
+                        st.write(f"NO2: {components['no2']} µg/m³")
+                        st.write(f"O3: {components['o3']} µg/m³")
+                        st.write(f"SO2: {components['so2']} µg/m³")
+                        st.write(f"PM2.5: {components['pm2_5']} µg/m³")
+                        st.write(f"PM10: {components['pm10']} µg/m³")
+                        st.write(f"NH3: {components['nh3']} µg/m³")
                     else:
-                        print("No current air pollution data available for the specified location.")
+                        st.error("No current air pollution data available for the specified location.")
                 else:
-                    print("Error: Unable to fetch current air pollution data from the API.")
+                    st.error("Error: Unable to fetch current air pollution data from the API.")
             else:
-                print("No geocoding data available for the specified city.")
+                st.error("No geocoding data available for the specified city.")
         else:
-            print("Error: Unable to fetch geocoding data from the API.")
+            st.error("Error: Unable to fetch geocoding data from the API.")
 
     # Call the function to get current air pollution data
     get_current_air_pollution(city_name, api_key)
-
