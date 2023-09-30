@@ -223,6 +223,15 @@ if selected=="highest and lowest aqi analysis":
     st.write(fig)
     with st.expander("**So was the highest aqi recorded in 2017?**"):
       st.write(" Not quite! Surprisingly the highest aqi was recorded on 7/11/2018 at 9pm with a value of 245.63 ! This could be due to missing daat in the yr 2017")
+      st.markdown("""**here we notice that the maximum recorded aqi was in 2017 and the minimum was recorded in the year 2020.**
+There are a few reasons why India recorded its maximum AQI in 2017 and its minimum AQI in 2020:
+2020
+->COVID-19 lockdown: The COVID-19 lockdown in India led to a significant reduction in economic activity, including a reduction in vehicle traffic and industrial activity. This reduction in emissions led to an improvement in air quality.
+->Reduced stubble burning: The Indian government took a number of steps to reduce stubble burning in 2020, such as providing financial incentives to farmers for using alternative methods of disposing of their crop stubble
+2017:
+->Meteorological conditions: India experienced a severe drought in 2016-17, which led to increased dust storms and forest fires
+->Vehicle emissions: Vehicle emissions are a major source of air pollution in India. In 2017, India had one of the largest vehicle populations in the world""")
+
   with tab2:
     st.subheader("The year 2017 has the maximum mean aqi.")
     st.markdown("<ul> <li style='font-size: 20px'>November had the highest aqi in 2017</li> <li style='font-size: 20px'>December had the lowest aqi in 2017</li></ul>",unsafe_allow_html=True)
@@ -249,6 +258,19 @@ if selected=="highest and lowest aqi analysis":
 
     g.xaxis.set_major_formatter(ticker.ScalarFormatter())
     st.write(fig)
+    with st.expander("See explanation"):
+      st.markdown("""we find that the highest aqi in 2017 recorded was 97.71 in the month of November andlowest is 93.20 in the month of December.
+
+there are several reasons:
+->Meteorological conditions: The month of November typically has low wind speeds and temperature inversions, which can trap pollutants in the air and make them more concentrated. These conditions are less common in the month of December.
+->Diwali: Diwali, the Hindu festival of lights, is typically celebrated in October-November. Diwali is a time when people burn fireworks and candles. The smoke from fireworks and candles can worsen air quality.
+->Stubble burning: Stubble burning is a common practice among farmers in northern India after harvesting their crops in October-November. The smoke from stubble burning contains high levels of particulate matter, which is a major air pollutant
+  
+Whereas it is interesting to note that the AQI in India is often highest at around 5pm. the possible reasons for it are:
+->Increased traffic: 5pm is typically a peak commuting time in India, so there is more traffic on the roads during this time
+->Industrial emissions: Some industries may operate 24 hours a day, but they may emit more pollutants during certain times of the day, such as during the evening hours. This could also contribute to the higher AQI at around 5pm.
+""")
+
 
     with tab3:
       st.subheader("average air quality index for each month over the years")
@@ -285,6 +307,19 @@ if selected=="seasonal and remark analysis of aqi":
       #plt.title("Air Quality Distribution by Seasons")
       plt.axis("equal")  # Equal aspect ratio ensures that pie is drawn as a circle.
       st.write(fig)
+      with st.expander("See explanation"):
+       st.markdown("""
+
+Theres a higher AIQ during winter and autumn months because of Weather Patterns: 
+->During winter and autumn, certain regions in India experience weather conditions that can contribute to poor air quality. For example, winter often brings temperature inversions, where cold air near the ground traps pollutants, leading to increased pollution levels. 
+
+->Reduced Dispersion: During winter, the lower temperatures and reduced wind speeds can limit the dispersion of pollutants, causing them to accumulate in the atmosphere and leading to higher AQI levels
+
+->Increased use of fossil fuels for heating: During the winter months, people in India use fossil fuels such as coal and wood for heating their homes. This can lead to an increase in the emission of pollutants into the air.
+
+->Geographical location: India is located in a region that is prone to dust storms. Dust storms can carry large amounts of pollutants into the air, which can worsen air quality.""")
+       
+
     
     with tab2:
       st.title("Remark Analysis")
@@ -294,6 +329,15 @@ if selected=="seasonal and remark analysis of aqi":
       fig,ax=plt.subplots(figsize=(10, 5))
       sns.barplot(x='Year',y='aqi',data=df,estimator=np.std,hue='remark')
       st.write(fig)
+      with st.expander("See explanation"):
+        st.markdown("""**we can see that aqi isnt very poor or severe during any of the years. The aqi is poorest in the year 2018 with the maxium no of poor recoded cases**
+this was particularly due to:
+
+1.Construction activities: Construction activities can also contribute to air pollution, especially in urban areas. In 2018, there was a significant increase in construction activities in India, which may have contributed to the worsening air quality.
+2.Economic growth: India experienced rapid economic growth in 2018, which led to an increase in industrial emissions and vehicle traffic. Both of these factors can contribute to air pollution.
+
+In addition to these factors, the rapid growth of urbanization and industrialization in India is also contributing to worsening air quality.""")
+
       st.divider()
       st.header("Air Distribution By Ratings")
       poor_count=df[df['remark']=='poor']['Year'].count()
@@ -311,14 +355,11 @@ if selected=="seasonal and remark analysis of aqi":
       plt.axis("equal")  # Equal aspect ratio ensures that pie is drawn as a circle.
       st.write(fig)
       with st.expander("See explanation"):
-       st.markdown("""
+        st.markdown("""The overall AQI in India is mostly good, with 56.1% of the days having a good AQI rating. However, it is concerning that 40.24% of the days have a moderate AQI rating and 3.73% of the days have a satisfactory AQI rating. This means that on more than half of the days in India, the air quality is not good.
 
-Theres a higher AIQ during winter and autumn months because of Weather Patterns: 
-->During winter and autumn, certain regions in India experience weather conditions that can contribute to poor air quality. For example, winter often brings temperature inversions, where cold air near the ground traps pollutants, leading to increased pollution levels. 
+The fact that the AQI is poor on only 0.02% of the days is a positive sign, but it is important to note that even a short exposure to poor air quality can have negative health effects.
 
-->Reduced Dispersion: During winter, the lower temperatures and reduced wind speeds can limit the dispersion of pollutants, causing them to accumulate in the atmosphere and leading to higher AQI levels
+The Indian government is taking a number of steps to improve air quality, but more needs to be done to address the root causes of air pollution, such as stubble burning, vehicle emissions, construction dust, and industrial emissions.""")
 
-->Increased use of fossil fuels for heating: During the winter months, people in India use fossil fuels such as coal and wood for heating their homes. This can lead to an increase in the emission of pollutants into the air.
 
-->Geographical location: India is located in a region that is prone to dust storms. Dust storms can carry large amounts of pollutants into the air, which can worsen air quality.""")
-       
+      
