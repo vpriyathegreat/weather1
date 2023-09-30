@@ -1,24 +1,21 @@
 import streamlit as st
 import requests
 from datetime import datetime
+
+
 openweather_api_key = "d90fab7004bbe953db2d107c55bb1d81"
 
-    st.title("5-Day Weather Forecast App")
+st.title("5-Day Weather Forecast App")
 
     # User input for the city name
-    city_name = st.text_input("Enter the city name:", "Delhi")
+city_name = st.text_input("Enter the city name:", "Delhi")
 
-    if st.button("Get Weather Forecast"):
-        # Step 1: Use the Geocoding API to get latitude and longitude by city name
-        geocoding_url = f"http://api.openweathermap.org/geo/1.0/direct?q={city_name}&limit=1&appid={openweather_api_key}"
-
-        response = requests.get(geocoding_url)
-
-        if response.status_code == 200:
-            geocoding_data = response.json()
-
-            if geocoding_data:
-                # Extract latitude and longitude from the geocoding response
+if st.button("Get Weather Forecast"):# Step 1: Use the Geocoding API to get latitude and longitude by city name
+    geocoding_url = f"http://api.openweathermap.org/geo/1.0/direct?q={city_name}&limit=1&appid={openweather_api_key}"
+    response = requests.get(geocoding_url)
+    if response.status_code == 200:
+        geocoding_data = response.json()
+        if geocoding_data:# Extract latitude and longitude from the geocoding response
                 latitude = geocoding_data[0]["lat"]
                 longitude = geocoding_data[0]["lon"]
 
@@ -55,7 +52,4 @@ openweather_api_key = "d90fab7004bbe953db2d107c55bb1d81"
                 st.error("No data found for the provided city name.")
         else:
             st.error("Error fetching data from the Geocoding API.")
-            else:
-                st.error("No data found for the provided city name.")
-        else:
-            st.error("Error fetching data from the Geocoding API.")
+
