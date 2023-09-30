@@ -6,7 +6,7 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 import numpy as np
-import datetime as dt
+from datetime import datetime as dt
 import io
 import requests
 
@@ -364,12 +364,10 @@ The fact that the AQI is poor on only 0.02% of the days is a positive sign, but 
 The Indian government is taking a number of steps to improve air quality, but more needs to be done to address the root causes of air pollution, such as stubble burning, vehicle emissions, construction dust, and industrial emissions.""")
 
 
-
 if selected == "airforecast":
-    # Replace with your OpenWeather API key
-    openweather_api_key = "d90fab7004bbe953db2d107c55bb1d81"
-
-    st.title("5-Day Weather Forecast App")
+  openweather_api_key = "d90fab7004bbe953db2d107c55bb1d81"
+    
+  st.title("5-Day Weather Forecast App")
 
     # User input for the city name
     city_name = st.text_input("Enter the city name:", "Delhi")
@@ -421,4 +419,3 @@ if selected == "airforecast":
                 st.error("No data found for the provided city name.")
         else:
             st.error("Error fetching data from the Geocoding API.")
-
