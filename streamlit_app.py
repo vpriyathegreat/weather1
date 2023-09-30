@@ -428,7 +428,7 @@ if selected == "airforecast":
             st.error("Error fetching data from the Geocoding API.")
 
 
-i
+
 
 # Replace with your OpenWeather API key
 api_key = "d90fab7004bbe953db2d107c55bb1d81"
