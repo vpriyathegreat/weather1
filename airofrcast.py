@@ -1,11 +1,7 @@
 import streamlit as st
 import requests
 from datetime import datetime
-
-
-
-    # Replace with your OpenWeather API key
-    openweather_api_key = "d90fab7004bbe953db2d107c55bb1d81"
+openweather_api_key = "d90fab7004bbe953db2d107c55bb1d81"
 
     st.title("5-Day Weather Forecast App")
 
@@ -55,6 +51,10 @@ from datetime import datetime
                             st.write("\n")
                 else:
                     st.error("Error fetching weather forecast data.")
+            else:
+                st.error("No data found for the provided city name.")
+        else:
+            st.error("Error fetching data from the Geocoding API.")
             else:
                 st.error("No data found for the provided city name.")
         else:
