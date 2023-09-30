@@ -429,6 +429,10 @@ if selected == "airforecast":
 
 
 if selected == "AIR":
+    import requests
+    from datetime import datetime as dt
+
+    # Replace with your OpenWeather API key
     api_key = "d90fab7004bbe953db2d107c55bb1d81"
 
     # Enter the city name
@@ -504,3 +508,4 @@ if selected == "AIR":
 
     # Call the function to get current air pollution data
     get_current_air_pollution(city_name, api_key)
+
