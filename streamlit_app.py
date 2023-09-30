@@ -364,15 +364,19 @@ The fact that the AQI is poor on only 0.02% of the days is a positive sign, but 
 The Indian government is taking a number of steps to improve air quality, but more needs to be done to address the root causes of air pollution, such as stubble burning, vehicle emissions, construction dust, and industrial emissions.""")
 
 
+# Check if the "airforecast" option is selected
 if selected == "airforecast":
-  openweather_api_key = "d90fab7004bbe953db2d107c55bb1d81"
-    
-  st.title("5-Day Weather Forecast App")
+    # Replace with your OpenWeather API key
+    openweather_api_key = "d90fab7004bbe953db2d107c55bb1d81"
+
+    # Set the title of the Streamlit app
+    st.title("5-Day Weather Forecast App")
 
     # User input for the city name
-  city_name = st.text_input("Enter the city name:", "Delhi")
+    city_name = st.text_input("Enter the city name:", "Delhi")
 
-  if st.button("Get Weather Forecast"):
+    # Check if the "Get Weather Forecast" button is clicked
+    if st.button("Get Weather Forecast"):
         # Step 1: Use the Geocoding API to get latitude and longitude by city name
         geocoding_url = f"http://api.openweathermap.org/geo/1.0/direct?q={city_name}&limit=1&appid={openweather_api_key}"
 
