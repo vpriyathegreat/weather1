@@ -370,9 +370,9 @@ if selected == "airforecast":
   st.title("5-Day Weather Forecast App")
 
     # User input for the city name
-    city_name = st.text_input("Enter the city name:", "Delhi")
+  city_name = st.text_input("Enter the city name:", "Delhi")
 
-    if st.button("Get Weather Forecast"):
+  if st.button("Get Weather Forecast"):
         # Step 1: Use the Geocoding API to get latitude and longitude by city name
         geocoding_url = f"http://api.openweathermap.org/geo/1.0/direct?q={city_name}&limit=1&appid={openweather_api_key}"
 
